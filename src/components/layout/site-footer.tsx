@@ -7,7 +7,7 @@ export function SiteFooter() {
       <div className="footer-shell">
         <div>
           <p className="footer-title">{siteConfig.name}</p>
-          <p className="footer-note">非营利、非官方的教育与技术研究项目。</p>
+          <p className="footer-note">本项目免费开源，仅供学习交流使用。</p>
         </div>
 
         <div className="footer-links" aria-label="页脚导航">
@@ -20,6 +20,9 @@ export function SiteFooter() {
           </a>
         </div>
       </div>
+      <p className="footer-notice">
+        <strong>注意：</strong>使用本服务时请遵守豆包平台的使用条款和相关法律法规
+      </p>
       <div className="footer-bottom">
         <span>© {new Date().getFullYear()} {siteConfig.name}</span>
         <span>请仅处理自己拥有或已获授权的内容</span>

@@ -5,7 +5,7 @@ import { siteConfig } from "@/lib/config";
 
 export const metadata: Metadata = {
   title: "关于项目",
-  description: "了解 watermarklift 豆包去水印工具的非营利定位、原图提取原理、开源代码与维护原则。",
+  description: "了解 WatermarkLift 豆包去水印工具的免费开源定位、原图提取原理、开源代码与维护原则。",
   alternates: { canonical: "/about/" },
 };
 
@@ -14,13 +14,13 @@ export default function AboutPage() {
     <ContentPage
       eyebrow="关于项目"
       title="开源、透明的豆包去水印工具"
-      description="watermarklift 通过提取公开分享页中的无水印原图地址，为用户提供免费、清晰的使用体验。"
+      description="WatermarkLift 通过提取公开分享页中的无水印原图地址，为用户提供免费、清晰的使用体验。"
       updated="2026-09-09"
     >
       <section>
         <h2>项目定位</h2>
         <p>
-          {siteConfig.name} 是独立、非营利的教育与技术研究项目。网站不出售解析结果、不提供会员服务，也不代表豆包官方。
+          {siteConfig.name} 免费开源，仅供学习交流使用。网站不出售解析结果、不提供会员服务，也不代表豆包官方。
         </p>
       </section>
 
@@ -35,7 +35,7 @@ export default function AboutPage() {
       <section>
         <h2>本站已经开源</h2>
         <p>
-          watermarklift 的前端源代码公开在
+          WatermarkLift 的前端源代码公开在
           <a href={siteConfig.repository} target="_blank" rel="noreferrer"> GitHub 仓库</a>，欢迎查看实现、报告问题和参与改进。
         </p>
         <p>

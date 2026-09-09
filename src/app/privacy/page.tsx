@@ -5,7 +5,7 @@ import { siteConfig } from "@/lib/config";
 
 export const metadata: Metadata = {
   title: "隐私说明",
-  description: "了解 watermarklift 豆包去水印工具如何处理分享链接、图片、日志和本地浏览器数据。",
+  description: "了解 WatermarkLift 豆包去水印工具如何处理分享链接、图片、日志和本地浏览器数据。",
   alternates: { canonical: "/privacy/" },
 };
 

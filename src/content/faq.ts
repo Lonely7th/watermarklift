@@ -2,7 +2,7 @@ export const faqItems = [
   {
     question: "豆包去水印是如何实现的？",
     answer:
-      "watermarklift 会读取用户提供的豆包公开分享页面，从页面数据中寻找平台已有的无水印高清原图地址。它不会使用 AI 涂抹、裁剪或修复图片，因此能够保留原始画质。",
+      "WatermarkLift 会读取用户提供的豆包公开分享页面，从页面数据中寻找平台已有的无水印高清原图地址。它不会使用 AI 涂抹、裁剪或修复图片，因此能够保留原始画质。",
   },
   {
     question: "为什么必须使用豆包分享链接？",
@@ -35,7 +35,7 @@ export const faqItems = [
       "不是。本网站是独立、非营利的教育与技术研究项目，与豆包及其运营主体不存在隶属、授权、合作或背书关系。",
   },
   {
-    question: "watermarklift 开源吗？",
+    question: "WatermarkLift 开源吗？",
     answer:
       "是。本站前端代码已在 GitHub 公开，任何人都可以查看实现、提交问题或参与改进。解析思路基于 ihmily/doubao-nomark 开源项目。",
   },

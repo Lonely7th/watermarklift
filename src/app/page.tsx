@@ -28,14 +28,14 @@ export default function HomePage() {
       <section className="hero-section">
         <div className="hero-glow" aria-hidden="true" />
         <div className="hero-content">
-          <span className="hero-pill"><SparklesIcon /> 免费在线 · 无广告 · 无需上传</span>
-          <h1><span>豆包去水印</span><br />高清原图下载</h1>
+          <span className="hero-pill"><SparklesIcon /> 本项目免费开源，仅供学习交流使用</span>
+          <h1><span>豆包去水印</span><br className="hero-title-break" />高清原图下载</h1>
           <p className="hero-lead">
             粘贴豆包公开分享链接，一键获取无水印高清原图。不是涂抹或修复水印，因此不损失图片画质。
           </p>
           <div className="hero-facts" aria-label="产品特点">
             <span><LockIcon /> 不上传图片文件</span>
-            <span><ImageIcon /> 免费且开源</span>
+            <span><ImageIcon /> 保留原图画质</span>
           </div>
         </div>
         <ParserTool />
@@ -59,7 +59,7 @@ export default function HomePage() {
           <span className="eyebrow">准确说明</span>
           <h2 id="principle-title">所谓豆包去水印，<br />是直接读取无水印原图。</h2>
           <p>
-            watermarklift 不使用 AI 修图，也不会修改图片像素。它从用户主动提供的豆包公开分享页面中，寻找平台数据里已有的无水印高清原图地址。
+            WatermarkLift 不使用 AI 修图，也不会修改图片像素。它从用户主动提供的豆包公开分享页面中，寻找平台数据里已有的无水印高清原图地址。
           </p>
           <a href="/about/" className="text-link">了解技术原理 <ArrowRightIcon /></a>
         </div>

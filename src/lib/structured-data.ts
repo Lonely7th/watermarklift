@@ -7,7 +7,7 @@ export const websiteStructuredData = {
   url: siteConfig.url,
   inLanguage: "zh-CN",
   description: siteConfig.description,
-  alternateName: ["watermarklift 豆包去水印", "豆包去水印工具"],
+  alternateName: ["WatermarkLift 豆包去水印", "豆包去水印工具"],
   sameAs: [siteConfig.repository],
 };
 

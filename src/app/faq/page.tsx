@@ -25,7 +25,7 @@ export default function FaqPage() {
     <ContentPage
       eyebrow="常见问题"
       title="豆包去水印常见问题"
-      description="了解 watermarklift 的去水印原理、支持范围、原图画质、数据处理方式和使用边界。"
+      description="了解 WatermarkLift 的去水印原理、支持范围、原图画质、数据处理方式和使用边界。"
       updated="2026-09-09"
     >
       <div className="content-faq-list">

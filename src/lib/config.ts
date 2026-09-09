@@ -2,9 +2,9 @@ const configuredUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim().replace(/\/$/, ""
 const defaultSiteUrl = "https://watermarklift.cn";
 
 export const siteConfig = {
-  name: process.env.NEXT_PUBLIC_SITE_NAME?.trim() || "watermarklift",
+  name: process.env.NEXT_PUBLIC_SITE_NAME?.trim() || "WatermarkLift",
   description:
-    "watermarklift 是免费的在线豆包去水印工具。粘贴豆包公开分享链接，即可提取并下载无水印高清原图，无需上传图片。",
+    "WatermarkLift 是免费的在线豆包去水印工具。粘贴豆包公开分享链接，即可提取并下载无水印高清原图，无需上传图片。",
   url: configuredUrl || defaultSiteUrl,
   isPublicUrlConfigured: true,
   apiUrl:

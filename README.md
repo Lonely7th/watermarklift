@@ -1,6 +1,6 @@
-# watermarklift
+# WatermarkLift
 
-watermarklift 是一个免费、开源的在线豆包去水印工具。它调用 CloudBase 解析接口，从豆包公开分享链接中提取并下载无水印高清原图。
+WatermarkLift 是一个免费、开源的在线豆包去水印工具。它调用 CloudBase 解析接口，从豆包公开分享链接中提取并下载无水印高清原图。
 
 ## 特性
 
@@ -28,7 +28,7 @@ npm run dev
 ## 环境变量
 
 ```dotenv
-NEXT_PUBLIC_SITE_NAME=watermarklift
+NEXT_PUBLIC_SITE_NAME=WatermarkLift
 NEXT_PUBLIC_SITE_URL=https://watermarklift.cn
 NEXT_PUBLIC_CONTACT_EMAIL=contact@your-domain.example
 NEXT_PUBLIC_API_URL=https://你的接口地址/pic-mark

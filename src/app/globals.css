@@ -191,13 +191,14 @@ button {
 .hero-section {
   position: relative;
   display: grid;
-  grid-template-columns: 0.88fr 1.12fr;
-  gap: clamp(36px, 5vw, 72px);
-  align-items: center;
+  grid-template-columns: 1fr;
+  gap: 34px;
+  align-content: center;
+  align-items: stretch;
   width: min(calc(100% - 48px), var(--page-width));
   min-height: calc(100svh - 62px);
   margin: 0 auto;
-  padding: 48px 0 64px;
+  padding: 42px 0 56px;
 }
 
 .hero-glow {
@@ -241,7 +242,7 @@ button {
 
 .hero-content h1 {
   margin: 22px 0 18px;
-  font-size: clamp(48px, 5vw, 68px);
+  font-size: clamp(48px, 5.5vw, 70px);
   font-weight: 700;
   line-height: 0.99;
   letter-spacing: -0.065em;
@@ -254,9 +255,13 @@ button {
   color: transparent;
 }
 
+.hero-title-break {
+  display: none;
+}
+
 .hero-lead {
   max-width: 540px;
-  margin: 0;
+  margin: 0 auto;
   color: var(--text-secondary);
   font-size: clamp(18px, 2vw, 21px);
   line-height: 1.55;
@@ -306,9 +311,21 @@ button {
   font-size: 12px;
 }
 
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero-facts {
+  justify-content: center;
+}
+
 .hero-section > .parser-shell {
-  width: auto;
-  margin: 0;
+  width: min(100%, 980px);
+  margin: 0 auto;
 }
 
 .hero-section .parser-card {
@@ -1296,6 +1313,20 @@ button {
   font-size: 12px;
 }
 
+.footer-notice {
+  width: min(calc(100% - 48px), var(--page-width));
+  padding: 15px 0;
+  margin: 0 auto;
+  border-top: 1px solid var(--line);
+  color: var(--text-secondary);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.footer-notice strong {
+  color: var(--text);
+}
+
 .footer-links {
   display: flex;
   flex-wrap: wrap;
@@ -1413,6 +1444,10 @@ button {
     margin: 16px 0 13px;
     font-size: clamp(40px, 11.5vw, 52px);
     line-height: 1.02;
+  }
+
+  .hero-title-break {
+    display: block;
   }
 
   .hero-lead {

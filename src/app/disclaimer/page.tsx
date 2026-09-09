@@ -5,7 +5,7 @@ import { siteConfig } from "@/lib/config";
 
 export const metadata: Metadata = {
   title: "免责声明",
-  description: "关于 watermarklift 非营利豆包去水印工具的非官方性质、知识产权、使用责任和服务可用性说明。",
+  description: "关于 WatermarkLift 免费开源豆包去水印工具的非官方性质、知识产权、使用责任和服务可用性说明。",
   alternates: { canonical: "/disclaimer/" },
 };
 

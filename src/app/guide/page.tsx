@@ -5,7 +5,7 @@ import { jsonLd } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
   title: "豆包图片去水印教程",
-  description: "豆包图片怎么去水印？三步创建豆包分享链接，使用 watermarklift 免费提取并下载无水印高清原图。",
+  description: "豆包图片怎么去水印？三步创建豆包分享链接，使用 WatermarkLift 免费提取并下载无水印高清原图。",
   alternates: { canonical: "/guide/" },
 };
 
@@ -27,7 +27,7 @@ const howToStructuredData = {
       "@type": "HowToStep",
       position: 2,
       name: "粘贴链接并开始去水印",
-      text: "将完整分享链接粘贴到 watermarklift 首页，点击开始去水印。",
+      text: "将完整分享链接粘贴到 WatermarkLift 首页，点击开始去水印。",
     },
     {
       "@type": "HowToStep",
