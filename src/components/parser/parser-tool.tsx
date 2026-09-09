@@ -3,6 +3,7 @@
 import { FormEvent, useRef, useState, useSyncExternalStore } from "react";
 
 import { ResultGrid } from "@/components/parser/result-grid";
+import { ToolRecommendations } from "@/components/recommendations/tool-recommendations";
 import {
   ArrowRightIcon,
   CheckIcon,
@@ -163,7 +164,12 @@ export function ParserTool() {
         ) : null}
       </div>
 
-      {images.length > 0 ? <ResultGrid images={images} onMessage={showNotice} /> : null}
+      {images.length > 0 ? (
+        <>
+          <ResultGrid images={images} onMessage={showNotice} />
+          <ToolRecommendations />
+        </>
+      ) : null}
     </section>
   );
 }

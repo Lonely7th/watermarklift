@@ -37,6 +37,15 @@ test("renders static content and parses a valid share URL", async ({ page }) => 
     page.getByRole("heading", { name: "找到 1 张无水印高清原图" }),
   ).toBeVisible();
   await expect(page.getByText("2048 × 2048", { exact: true })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "好用的 AI 工具" })).toBeVisible();
+  await expect(page.getByRole("link", { name: /讯飞智作/ })).toHaveAttribute(
+    "href",
+    "https://ai-bot.cn/sites/246.html",
+  );
+  await expect(page.getByRole("link", { name: /AiPPT/ })).toHaveAttribute(
+    "target",
+    "_blank",
+  );
 });
 
 test("shows a useful validation error", async ({ page }) => {

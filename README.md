@@ -8,6 +8,7 @@ WatermarkLift 是一个免费、开源的在线豆包去水印工具。它调用
 - 响应式、深色模式和减少动态效果支持
 - 分享文本自动提取及严格的豆包链接校验
 - 豆包无水印原图预览、下载、复制地址和完整错误状态
+- 解析成功后展示第三方 AI 工具推荐
 - 使用指南、FAQ、关于、隐私和免责声明页面
 - Metadata、Open Graph、JSON-LD、robots、sitemap 和 `llms.txt`
 - 正式域名和规范链接统一为 `https://watermarklift.cn`
