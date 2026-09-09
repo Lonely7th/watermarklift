@@ -20,8 +20,8 @@ export function ResultGrid({ images, onMessage }: ResultGridProps) {
     <section className="results-section" aria-labelledby="results-title">
       <div className="results-heading">
         <div>
-          <span className="success-badge"><CheckIcon /> 解析完成</span>
-          <h2 id="results-title">找到 {images.length} 张高清原图</h2>
+          <span className="success-badge"><CheckIcon /> 去水印完成</span>
+          <h2 id="results-title">找到 {images.length} 张无水印高清原图</h2>
         </div>
         <p>点击图片可放大预览，下载会直接连接素材源站。</p>
       </div>

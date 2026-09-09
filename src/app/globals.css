@@ -191,14 +191,13 @@ button {
 .hero-section {
   position: relative;
   display: grid;
-  grid-template-columns: 1.06fr 0.94fr;
-  gap: 40px;
+  grid-template-columns: 0.88fr 1.12fr;
+  gap: clamp(36px, 5vw, 72px);
   align-items: center;
   width: min(calc(100% - 48px), var(--page-width));
-  min-height: 690px;
+  min-height: calc(100svh - 62px);
   margin: 0 auto;
-  padding: 78px 0 92px;
-  overflow: hidden;
+  padding: 48px 0 64px;
 }
 
 .hero-glow {
@@ -241,8 +240,8 @@ button {
 }
 
 .hero-content h1 {
-  margin: 25px 0 20px;
-  font-size: clamp(54px, 6vw, 78px);
+  margin: 22px 0 18px;
+  font-size: clamp(48px, 5vw, 68px);
   font-weight: 700;
   line-height: 0.99;
   letter-spacing: -0.065em;
@@ -256,7 +255,7 @@ button {
 }
 
 .hero-lead {
-  max-width: 600px;
+  max-width: 540px;
   margin: 0;
   color: var(--text-secondary);
   font-size: clamp(18px, 2vw, 21px);
@@ -305,6 +304,27 @@ button {
   margin-top: 27px;
   color: var(--text-tertiary);
   font-size: 12px;
+}
+
+.hero-section > .parser-shell {
+  width: auto;
+  margin: 0;
+}
+
+.hero-section .parser-card {
+  padding: clamp(28px, 3.2vw, 44px);
+}
+
+.hero-section .parser-card-heading {
+  margin-bottom: 22px;
+}
+
+.hero-section .parser-card-heading h2 {
+  font-size: clamp(30px, 3.2vw, 40px);
+}
+
+.hero-section .parser-card-heading p {
+  font-size: 15px;
 }
 
 .hero-facts span {
@@ -1330,7 +1350,8 @@ button {
 @media (max-width: 900px) {
   .hero-section {
     grid-template-columns: 1fr;
-    padding-top: 76px;
+    gap: 32px;
+    padding-top: 50px;
   }
 
   .hero-content {
@@ -1384,18 +1405,26 @@ button {
 
   .hero-section {
     min-height: auto;
-    padding: 58px 0 70px;
+    gap: 24px;
+    padding: 30px 0 52px;
   }
 
   .hero-content h1 {
-    margin-top: 20px;
-    font-size: clamp(46px, 14vw, 62px);
+    margin: 16px 0 13px;
+    font-size: clamp(40px, 11.5vw, 52px);
+    line-height: 1.02;
+  }
+
+  .hero-lead {
+    font-size: 16px;
+    line-height: 1.5;
   }
 
   .hero-facts {
-    flex-direction: column;
-    gap: 9px;
-    align-items: center;
+    gap: 14px;
+    justify-content: center;
+    margin-top: 17px;
+    font-size: 11px;
   }
 
   .hero-visual {
@@ -1412,7 +1441,22 @@ button {
   }
 
   .parser-card {
+    padding: 23px 20px;
     border-radius: 25px;
+  }
+
+  .hero-section .parser-card-heading {
+    margin-bottom: 17px;
+  }
+
+  .hero-section .parser-card-heading h2 {
+    margin: 9px 0 6px;
+    font-size: 28px;
+  }
+
+  .hero-section .parser-card-heading p {
+    font-size: 13px;
+    line-height: 1.5;
   }
 
   .url-control {

@@ -7,6 +7,8 @@ export const websiteStructuredData = {
   url: siteConfig.url,
   inLanguage: "zh-CN",
   description: siteConfig.description,
+  alternateName: ["watermarklift 豆包去水印", "豆包去水印工具"],
+  sameAs: [siteConfig.repository],
 };
 
 export const applicationStructuredData = {
@@ -19,6 +21,15 @@ export const applicationStructuredData = {
   browserRequirements: "Requires JavaScript and a modern web browser",
   description: siteConfig.description,
   isAccessibleForFree: true,
+  inLanguage: "zh-CN",
+  featureList: [
+    "从豆包公开分享链接提取无水印原图",
+    "查看原图分辨率",
+    "在线预览并下载高清原图",
+    "无需上传图片文件",
+  ],
+  sameAs: [siteConfig.repository],
+  keywords: "豆包去水印, 豆包图片去水印, 豆包无水印原图, 豆包图片下载",
   offers: {
     "@type": "Offer",
     price: "0",

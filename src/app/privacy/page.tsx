@@ -5,7 +5,7 @@ import { siteConfig } from "@/lib/config";
 
 export const metadata: Metadata = {
   title: "隐私说明",
-  description: "了解原图提取工具如何处理分享链接、图片、日志和本地浏览器数据。",
+  description: "了解 watermarklift 豆包去水印工具如何处理分享链接、图片、日志和本地浏览器数据。",
   alternates: { canonical: "/privacy/" },
 };
 
@@ -20,7 +20,7 @@ export default function PrivacyPage() {
       <section>
         <h2>我们处理什么</h2>
         <p>
-          当你点击“提取原图”时，浏览器会把你输入的豆包公开分享链接发送至解析接口。接口使用该链接读取公开页面，并把找到的原图地址和尺寸返回给浏览器。
+          当你点击“开始去水印”时，浏览器会把你输入的豆包公开分享链接发送至解析接口。接口使用该链接读取公开页面，并把找到的无水印原图地址和尺寸返回给浏览器。
         </p>
       </section>
 
@@ -59,7 +59,10 @@ export default function PrivacyPage() {
             <a href={`mailto:${siteConfig.contactEmail}`}> {siteConfig.contactEmail}</a>。
           </p>
         ) : (
-          <p>联系邮箱将在正式上线前补充。未配置联系和删除渠道前，不建议公开收集真实用户请求。</p>
+          <p>
+            联系邮箱尚未配置。如需查询或删除相关记录，可暂时通过
+            <a href={`${siteConfig.repository}/issues`} target="_blank" rel="noreferrer"> GitHub Issues</a> 提交请求，请勿在公开 Issue 中粘贴包含敏感信息的链接。
+          </p>
         )}
       </section>
     </ContentPage>

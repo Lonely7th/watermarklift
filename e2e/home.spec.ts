@@ -20,25 +20,35 @@ test("renders static content and parses a valid share URL", async ({ page }) => 
   });
 
   await page.goto("/", { waitUntil: "networkidle" });
-  await expect(page.getByRole("heading", { level: 1 })).toContainText("找回作品");
+  await expect(page.getByRole("heading", { level: 1 })).toContainText("豆包去水印");
+  const parserRegion = page.getByRole("region", { name: "在线提取无水印原图" });
+  await expect(parserRegion.locator("form")).toHaveAttribute("data-ready", "true");
+  const submitButton = page.getByRole("button", { name: "开始去水印" });
+  const buttonBox = await submitButton.boundingBox();
+  const viewport = page.viewportSize();
+  expect(buttonBox).not.toBeNull();
+  expect(viewport).not.toBeNull();
+  expect(buttonBox!.y + buttonBox!.height).toBeLessThanOrEqual(viewport!.height);
   await page
     .getByRole("textbox", { name: "豆包分享链接" })
     .fill("https://www.doubao.com/thread/example");
-  await page.getByRole("button", { name: "提取原图" }).click();
-  await expect(page.getByRole("heading", { name: "找到 1 张高清原图" })).toBeVisible();
+  await submitButton.click();
+  await expect(
+    page.getByRole("heading", { name: "找到 1 张无水印高清原图" }),
+  ).toBeVisible();
   await expect(page.getByText("2048 × 2048", { exact: true })).toBeVisible();
 });
 
 test("shows a useful validation error", async ({ page }) => {
   await page.goto("/", { waitUntil: "networkidle" });
+  const parserRegion = page.getByRole("region", { name: "在线提取无水印原图" });
+  await expect(parserRegion.locator("form")).toHaveAttribute("data-ready", "true");
   await page
     .getByRole("textbox", { name: "豆包分享链接" })
     .fill("https://example.com/thread/nope");
-  await page.getByRole("button", { name: "提取原图" }).click();
+  await page.getByRole("button", { name: "开始去水印" }).click();
   await expect(
-    page
-      .getByRole("region", { name: "粘贴豆包分享链接" })
-      .getByRole("alert"),
+    parserRegion.getByRole("alert"),
   ).toContainText("目前仅支持豆包");
 });
 
@@ -53,7 +63,7 @@ test("navigates between statically exported content pages", async ({ page }) => 
   await expect(
     page.getByRole("heading", {
       level: 1,
-      name: "从分享链接获取高清原图",
+      name: "豆包图片去水印教程",
     }),
   ).toBeVisible();
 });

@@ -5,7 +5,7 @@ import { siteConfig } from "@/lib/config";
 
 export const metadata: Metadata = {
   title: "免责声明",
-  description: "关于本非营利原图提取工具的非官方性质、知识产权、使用责任和服务可用性说明。",
+  description: "关于 watermarklift 非营利豆包去水印工具的非官方性质、知识产权、使用责任和服务可用性说明。",
   alternates: { canonical: "/disclaimer/" },
 };
 
@@ -27,7 +27,7 @@ export default function DisclaimerPage() {
       <section>
         <h2>二、服务性质</h2>
         <p>
-          本网站仅尝试从用户主动提交的公开分享页面中读取已有的素材地址，不对图片进行人工智能重绘、像素修改或水印擦除。网站不保证解析结果的准确性、完整性、持续性和可用性。
+          本网站所称“豆包去水印”，是指从用户主动提交的公开分享页面中读取已有的无水印原图地址，不对带水印图片进行人工智能重绘、像素修改或涂抹。网站不保证解析结果的准确性、完整性、持续性和可用性。
         </p>
       </section>
 
@@ -61,7 +61,10 @@ export default function DisclaimerPage() {
             <a href={`mailto:${siteConfig.contactEmail}`}> {siteConfig.contactEmail}</a>。我们将在核实后采取合理措施。
           </p>
         ) : (
-          <p>权利投诉邮箱将在正式域名和运营主体确定后公布。在此之前，不应面向公众正式运营。</p>
+          <p>
+            权利投诉邮箱尚未配置。如需提交权利通知，可暂时通过
+            <a href={`${siteConfig.repository}/issues`} target="_blank" rel="noreferrer"> GitHub Issues</a> 联系维护者；涉及隐私材料时，请先索取非公开提交方式。
+          </p>
         )}
       </section>
 

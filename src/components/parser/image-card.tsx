@@ -51,7 +51,7 @@ export function ImageCard({ image, index, onPreview, onMessage }: ImageCardProps
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={image.url}
-          alt={`解析结果 ${index + 1}`}
+          alt={`豆包无水印原图 ${index + 1}`}
           loading="lazy"
           referrerPolicy="no-referrer"
         />
@@ -60,7 +60,7 @@ export function ImageCard({ image, index, onPreview, onMessage }: ImageCardProps
 
       <div className="image-card-footer">
         <div>
-          <strong>原图 {String(index + 1).padStart(2, "0")}</strong>
+          <strong>无水印原图 {String(index + 1).padStart(2, "0")}</strong>
           <span>{image.width || "—"} × {image.height || "—"}</span>
         </div>
         <div className="image-actions">

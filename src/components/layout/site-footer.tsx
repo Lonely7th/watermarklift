@@ -15,8 +15,8 @@ export function SiteFooter() {
           <a href="/faq/">常见问题</a>
           <a href="/privacy/">隐私说明</a>
           <a href="/disclaimer/">免责声明</a>
-          <a href={siteConfig.upstreamRepository} target="_blank" rel="noreferrer">
-            开源仓库 <ExternalLinkIcon />
+          <a href={siteConfig.repository} target="_blank" rel="noreferrer">
+            GitHub 开源 <ExternalLinkIcon />
           </a>
         </div>
       </div>

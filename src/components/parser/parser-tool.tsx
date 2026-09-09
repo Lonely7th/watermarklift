@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useRef, useState } from "react";
+import { FormEvent, useRef, useState, useSyncExternalStore } from "react";
 
 import { ResultGrid } from "@/components/parser/result-grid";
 import {
@@ -18,7 +18,16 @@ import type { ParsedImage } from "@/types/parser";
 
 type Notice = { message: string; tone: "error" | "success" } | null;
 
+function subscribeToHydration() {
+  return () => undefined;
+}
+
 export function ParserTool() {
+  const isHydrated = useSyncExternalStore(
+    subscribeToHydration,
+    () => true,
+    () => false,
+  );
   const [input, setInput] = useState("");
   const [images, setImages] = useState<ParsedImage[]>([]);
   const [loading, setLoading] = useState(false);
@@ -80,12 +89,12 @@ export function ParserTool() {
     <section id="parser" className="parser-shell" aria-labelledby="parser-title">
       <div className="parser-card">
         <div className="parser-card-heading">
-          <span className="eyebrow"><ImageIcon /> 原图提取</span>
-          <h2 id="parser-title">粘贴豆包分享链接</h2>
-          <p>支持公开的豆包对话分享链接。无需上传图片文件。</p>
+          <span className="eyebrow"><ImageIcon /> 豆包去水印</span>
+          <h2 id="parser-title">在线提取无水印原图</h2>
+          <p>粘贴公开的豆包对话分享链接，立即开始。</p>
         </div>
 
-        <form onSubmit={handleSubmit} noValidate>
+        <form onSubmit={handleSubmit} noValidate data-ready={isHydrated}>
           <label htmlFor="share-url" className="sr-only">豆包分享链接</label>
           <div className={`url-control${notice?.tone === "error" ? " has-error" : ""}`}>
             <input
@@ -122,11 +131,15 @@ export function ParserTool() {
 
           <div className="parser-form-bottom">
             <p id="input-help"><LockIcon /> 链接仅用于本次解析请求</p>
-            <button type="submit" className="primary-button" disabled={loading || !input.trim()}>
+            <button
+              type="submit"
+              className="primary-button"
+              disabled={!isHydrated || loading || !input.trim()}
+            >
               {loading ? (
                 <><span className="button-spinner" /> 正在解析</>
               ) : (
-                <>提取原图 <ArrowRightIcon /></>
+                <>开始去水印 <ArrowRightIcon /></>
               )}
             </button>
           </div>
@@ -143,7 +156,7 @@ export function ParserTool() {
           <div className="loading-panel" aria-live="polite">
             <div className="loading-orbit"><ImageIcon /></div>
             <div>
-              <strong>正在读取公开分享页面</strong>
+              <strong>正在提取豆包无水印原图</strong>
               <span>通常只需要几秒钟，请不要关闭页面。</span>
             </div>
           </div>

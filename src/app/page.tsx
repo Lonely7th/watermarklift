@@ -6,6 +6,9 @@ import { faqItems } from "@/content/faq";
 import { applicationStructuredData, jsonLd } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
+  title: "豆包去水印工具 - 免费下载无水印原图",
+  description:
+    "免费在线豆包去水印。粘贴豆包公开分享链接，即可提取、预览并下载高清无水印原图，无需上传图片。",
   alternates: { canonical: "/" },
 };
 
@@ -25,52 +28,38 @@ export default function HomePage() {
       <section className="hero-section">
         <div className="hero-glow" aria-hidden="true" />
         <div className="hero-content">
-          <span className="hero-pill"><SparklesIcon /> 免费 · 无广告 · 教育用途</span>
-          <h1>找回作品<br /><span>最初的清晰。</span></h1>
+          <span className="hero-pill"><SparklesIcon /> 免费在线 · 无广告 · 无需上传</span>
+          <h1><span>豆包去水印</span><br />高清原图下载</h1>
           <p className="hero-lead">
-            从豆包公开分享链接中提取高清原图地址。无需上传图片，不压缩画质。
+            粘贴豆包公开分享链接，一键获取无水印高清原图。不是涂抹或修复水印，因此不损失图片画质。
           </p>
-          <a href="#parser" className="hero-action">
-            立即开始 <ArrowRightIcon />
-          </a>
           <div className="hero-facts" aria-label="产品特点">
             <span><LockIcon /> 不上传图片文件</span>
-            <span><ImageIcon /> 保留原始分辨率</span>
+            <span><ImageIcon /> 免费且开源</span>
           </div>
         </div>
-        <div className="hero-visual" aria-hidden="true">
-          <div className="visual-card visual-card-back" />
-          <div className="visual-card visual-card-front">
-            <span className="visual-sun" />
-            <span className="visual-mountain one" />
-            <span className="visual-mountain two" />
-            <span className="visual-shine" />
-          </div>
-          <div className="visual-label"><span /> 2048 × 2048 原图</div>
-        </div>
+        <ParserTool />
       </section>
-
-      <ParserTool />
 
       <section className="section-shell how-section" aria-labelledby="how-title">
         <div className="section-heading centered">
           <span className="eyebrow">工作原理</span>
-          <h2 id="how-title">三步，获取高清原图。</h2>
-          <p>过程简单透明，图片文件不经过本站服务器。</p>
+          <h2 id="how-title">豆包图片去水印，只需三步。</h2>
+          <p>无需安装软件，图片文件不经过本站服务器。</p>
         </div>
         <ol className="steps-grid">
           <li><span>01</span><h3>创建分享链接</h3><p>在豆包对话中找到生成图片，点击分享并复制公开链接。</p></li>
           <li><span>02</span><h3>解析页面数据</h3><p>粘贴链接，工具读取公开页面中已有的原始素材信息。</p></li>
-          <li><span>03</span><h3>预览并下载</h3><p>确认图片尺寸后，浏览器直接从素材源地址下载原图。</p></li>
+          <li><span>03</span><h3>下载无水印原图</h3><p>确认图片尺寸后，浏览器直接从素材源地址下载高清原图。</p></li>
         </ol>
       </section>
 
       <section className="section-shell principle-section" aria-labelledby="principle-title">
         <div className="principle-copy">
           <span className="eyebrow">准确说明</span>
-          <h2 id="principle-title">不是擦除水印，<br />而是读取原图地址。</h2>
+          <h2 id="principle-title">所谓豆包去水印，<br />是直接读取无水印原图。</h2>
           <p>
-            本工具不使用 AI 修图，也不会修改图片像素。它仅从用户主动提供的公开分享页面中，寻找平台页面数据里已有的高清原图地址。
+            watermarklift 不使用 AI 修图，也不会修改图片像素。它从用户主动提供的豆包公开分享页面中，寻找平台数据里已有的无水印高清原图地址。
           </p>
           <a href="/about/" className="text-link">了解技术原理 <ArrowRightIcon /></a>
         </div>
@@ -84,7 +73,7 @@ export default function HomePage() {
       <section className="section-shell faq-section" aria-labelledby="faq-title">
         <div className="section-heading">
           <span className="eyebrow">常见问题</span>
-          <h2 id="faq-title">在开始之前。</h2>
+          <h2 id="faq-title">豆包去水印常见问题。</h2>
         </div>
         <div className="faq-list">
           {faqItems.slice(0, 4).map((item) => (

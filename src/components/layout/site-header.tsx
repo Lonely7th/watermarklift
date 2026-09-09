@@ -27,7 +27,7 @@ export function SiteHeader() {
         </nav>
 
         <a href="/#parser" className="nav-action">
-          开始提取
+          豆包去水印
         </a>
       </div>
     </header>
