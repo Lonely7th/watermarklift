@@ -1,9 +1,8 @@
 "use client";
 
-import { FormEvent, useRef, useState, useSyncExternalStore } from "react";
+import { FormEvent, useCallback, useRef, useState, useSyncExternalStore } from "react";
 
-import { ResultGrid } from "@/components/parser/result-grid";
-import { ToolRecommendations } from "@/components/recommendations/tool-recommendations";
+import { ResultsDialog } from "@/components/parser/results-dialog";
 import {
   ArrowRightIcon,
   CheckIcon,
@@ -31,9 +30,11 @@ export function ParserTool() {
   );
   const [input, setInput] = useState("");
   const [images, setImages] = useState<ParsedImage[]>([]);
+  const [resultsOpen, setResultsOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const [notice, setNotice] = useState<Notice>(null);
   const noticeTimer = useRef<number | null>(null);
+  const closeResults = useCallback(() => setResultsOpen(false), []);
 
   function showNotice(message: string, tone: "error" | "success" = "success") {
     setNotice({ message, tone });
@@ -66,12 +67,14 @@ export function ParserTool() {
 
     setLoading(true);
     setImages([]);
+    setResultsOpen(false);
     const controller = new AbortController();
     const timeout = window.setTimeout(() => controller.abort(), 30_000);
 
     try {
       const result = await parseImages(shareUrl, { signal: controller.signal });
       setImages(result.images);
+      setResultsOpen(true);
     } catch (error) {
       if (error instanceof DOMException && error.name === "AbortError") {
         showNotice("解析等待时间过长，请稍后重试", "error");
@@ -117,6 +120,7 @@ export function ParserTool() {
                 onClick={() => {
                   setInput("");
                   setImages([]);
+                  setResultsOpen(false);
                   setNotice(null);
                 }}
               >
@@ -162,13 +166,20 @@ export function ParserTool() {
             </div>
           </div>
         ) : null}
+
+        {images.length > 0 && !resultsOpen ? (
+          <div className="results-reopen" role="status">
+            <span><CheckIcon /> 已找到 {images.length} 张无水印原图</span>
+            <button type="button" onClick={() => setResultsOpen(true)}>查看成果</button>
+          </div>
+        ) : null}
       </div>
 
-      {images.length > 0 ? (
-        <>
-          <ResultGrid images={images} onMessage={showNotice} />
-          <ToolRecommendations />
-        </>
+      {images.length > 0 && resultsOpen ? (
+        <ResultsDialog
+          images={images}
+          onClose={closeResults}
+        />
       ) : null}
     </section>
   );

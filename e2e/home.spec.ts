@@ -33,6 +33,10 @@ test("renders static content and parses a valid share URL", async ({ page }) => 
     .getByRole("textbox", { name: "豆包分享链接" })
     .fill("https://www.doubao.com/thread/example");
   await submitButton.click();
+  const resultsDialog = page.getByRole("dialog", {
+    name: "无水印成果与工具推荐",
+  });
+  await expect(resultsDialog).toBeVisible();
   await expect(
     page.getByRole("heading", { name: "找到 1 张无水印高清原图" }),
   ).toBeVisible();
@@ -40,12 +44,24 @@ test("renders static content and parses a valid share URL", async ({ page }) => 
   await expect(page.getByRole("heading", { name: "好用的 AI 工具" })).toBeVisible();
   await expect(page.getByRole("link", { name: /讯飞智作/ })).toHaveAttribute(
     "href",
-    "https://ai-bot.cn/sites/246.html",
+    "https://www.xfzhizuo.cn/",
+  );
+  await expect(page.getByRole("link", { name: /朱雀 AI 检测/ })).toHaveAttribute(
+    "href",
+    "https://matrix.tencent.com/ai-detect/",
+  );
+  await expect(page.getByRole("link", { name: /即梦 AI/ })).toHaveAttribute(
+    "href",
+    "https://jimeng.jianying.com/",
   );
   await expect(page.getByRole("link", { name: /AiPPT/ })).toHaveAttribute(
     "target",
     "_blank",
   );
+  await page.getByRole("button", { name: "关闭成果弹窗" }).click();
+  await expect(resultsDialog).toBeHidden();
+  await page.getByRole("button", { name: "查看成果" }).click();
+  await expect(resultsDialog).toBeVisible();
 });
 
 test("shows a useful validation error", async ({ page }) => {
