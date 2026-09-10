@@ -57,7 +57,7 @@ export default function HomePage() {
       <section className="section-shell principle-section" aria-labelledby="principle-title">
         <div className="principle-copy">
           <span className="eyebrow">准确说明</span>
-          <h2 id="principle-title">所谓豆包去水印，<br />是直接读取无水印原图。</h2>
+          <h2 id="principle-title">直接读取无水印原图。</h2>
           <p>
             WatermarkLift 不使用 AI 修图，也不会修改图片像素。它从用户主动提供的豆包公开分享页面中，寻找平台数据里已有的无水印高清原图地址。
           </p>
