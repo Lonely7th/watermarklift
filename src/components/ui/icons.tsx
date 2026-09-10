@@ -88,6 +88,15 @@ export function ImageIcon(props: IconProps) {
   );
 }
 
+export function HelpCircleIcon(props: IconProps) {
+  return (
+    <BaseIcon {...props}>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M9.8 9a2.35 2.35 0 1 1 3.55 2c-.9.55-1.35 1.1-1.35 2M12 17h.01" />
+    </BaseIcon>
+  );
+}
+
 export function LockIcon(props: IconProps) {
   return (
     <BaseIcon {...props}>

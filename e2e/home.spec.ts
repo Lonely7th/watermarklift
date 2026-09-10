@@ -29,6 +29,12 @@ test("renders static content and parses a valid share URL", async ({ page }) => 
   expect(buttonBox).not.toBeNull();
   expect(viewport).not.toBeNull();
   expect(buttonBox!.y + buttonBox!.height).toBeLessThanOrEqual(viewport!.height);
+  const guideEntry = parserRegion.getByRole("link", { name: "如何获取链接" });
+  await expect(guideEntry).toBeVisible();
+  await expect(guideEntry).toHaveAttribute("href", "/guide/#how-to-get-link");
+  const guideEntryBox = await guideEntry.boundingBox();
+  expect(guideEntryBox).not.toBeNull();
+  expect(guideEntryBox!.y + guideEntryBox!.height).toBeLessThanOrEqual(viewport!.height);
   await page
     .getByRole("textbox", { name: "豆包分享链接" })
     .fill("https://www.doubao.com/thread/example");
@@ -95,16 +101,24 @@ test("shows a useful validation error", async ({ page }) => {
 
 test("navigates between statically exported content pages", async ({ page }) => {
   await page.goto("/", { waitUntil: "networkidle" });
-  await page
-    .getByRole("contentinfo")
-    .getByRole("link", { name: "使用指南" })
-    .click();
+  const parserRegion = page.getByRole("region", { name: "在线提取无水印原图" });
+  await expect(parserRegion.locator("form")).toHaveAttribute("data-ready", "true");
+  await parserRegion.getByRole("link", { name: "如何获取链接" }).click();
 
-  await expect(page).toHaveURL(/\/guide\/$/);
+  await expect(page).toHaveURL(/\/guide\/#how-to-get-link$/);
   await expect(
     page.getByRole("heading", {
       level: 1,
       name: "豆包图片去水印教程",
     }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "第一步：点击豆包的分享按钮" }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("img", { name: "豆包图片生成结果下方的分享按钮位置" }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("img", { name: "豆包分享窗口中选择图片并点击复制链接" }),
   ).toBeVisible();
 });

@@ -8,6 +8,7 @@ import {
   CheckIcon,
   ClipboardIcon,
   CloseIcon,
+  HelpCircleIcon,
   ImageIcon,
   LockIcon,
   WarningIcon,
@@ -93,7 +94,14 @@ export function ParserTool() {
     <section id="parser" className="parser-shell" aria-labelledby="parser-title">
       <div className="parser-card">
         <div className="parser-card-heading">
-          <span className="eyebrow"><ImageIcon /> 豆包去水印</span>
+          <div className="parser-heading-row">
+            <span className="eyebrow"><ImageIcon /> 豆包去水印</span>
+            <a className="parser-guide-entry" href="/guide/#how-to-get-link">
+              <HelpCircleIcon />
+              <span>如何获取链接</span>
+              <ArrowRightIcon />
+            </a>
+          </div>
           <h2 id="parser-title">在线提取无水印原图</h2>
           <p>粘贴公开的豆包对话分享链接，立即开始。</p>
         </div>
