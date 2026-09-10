@@ -23,8 +23,8 @@ const recommendedTools = [
   },
   {
     name: "鲸鱼 AI 助手",
-    category: "AI 文档处理",
-    description: "将 AI 内容导出为 Word、Excel 和 PDF 等格式。",
+    category: "AI 文档导出",
+    description: "将 DeepSeek、豆包 对话导出为 Word、Excel 和 PDF 等格式文档。",
     href: "https://m.aiwhaler.com/",
     logo: "https://m.aiwhaler.com/images/logo-main.png",
     mark: "鲸",
