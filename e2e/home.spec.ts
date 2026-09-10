@@ -42,7 +42,7 @@ test("renders static content and parses a valid share URL", async ({ page }) => 
   ).toBeVisible();
   await expect(page.getByText("2048 × 2048", { exact: true })).toBeVisible();
   await expect(page.getByRole("heading", { name: "好用的 AI 工具" })).toBeVisible();
-  await expect(resultsDialog.locator(".recommendation-mark img")).toHaveCount(5);
+  await expect(resultsDialog.locator(".recommendation-mark img")).toHaveCount(6);
   await expect(
     resultsDialog.getByText("文字转语音、虚拟数字人和音视频内容创作平台。"),
   ).toBeVisible();
@@ -62,6 +62,18 @@ test("renders static content and parses a valid share URL", async ({ page }) => 
     "target",
     "_blank",
   );
+  await expect(page.getByRole("link", { name: /LiblibAI/ })).toHaveAttribute(
+    "href",
+    "https://www.liblib.art/",
+  );
+  if (viewport!.width > 720) {
+    const toolsPanel = resultsDialog.locator(".results-dialog-tools");
+    const { clientHeight, scrollHeight } = await toolsPanel.evaluate((element) => ({
+      clientHeight: element.clientHeight,
+      scrollHeight: element.scrollHeight,
+    }));
+    expect(scrollHeight).toBeLessThanOrEqual(clientHeight + 1);
+  }
   await page.getByRole("button", { name: "关闭成果弹窗" }).click();
   await expect(resultsDialog).toBeHidden();
   await page.getByRole("button", { name: "查看成果" }).click();

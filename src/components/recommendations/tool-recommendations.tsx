@@ -48,6 +48,15 @@ const recommendedTools = [
     mark: "P",
     tone: "orange",
   },
+  {
+    name: "LiblibAI",
+    category: "AI 图像创作",
+    description: "集图片生成、模型分享和在线训练于一体的 AI 创作平台。",
+    href: "https://www.liblib.art/",
+    logo: "https://ai-bot.cn/wp-content/uploads/2025/10/liblib.art-logo.png",
+    mark: "L",
+    tone: "green",
+  },
 ] as const;
 
 export function ToolRecommendations() {
