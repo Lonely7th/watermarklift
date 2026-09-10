@@ -1,6 +1,10 @@
-# WatermarkLift
+# WatermarkLift：免费开源的豆包去水印工具
 
-WatermarkLift 是一个免费、开源的在线豆包去水印工具。它调用 CloudBase 解析接口，从豆包公开分享链接中提取并下载无水印高清原图。
+WatermarkLift 是一个免费的在线豆包去水印工具。粘贴豆包公开分享链接，即可提取、预览并下载高清无水印原图。
+
+[在线使用 WatermarkLift 豆包去水印](https://watermarklift.cn/) ·
+[查看使用教程](https://watermarklift.cn/#guide) ·
+[提交问题](https://github.com/Lonely7th/watermarklift/issues)
 
 ## 特性
 
