@@ -31,7 +31,7 @@ export default function HomePage() {
           <span className="hero-pill"><SparklesIcon /> 本项目免费开源，仅供学习交流使用</span>
           <h1><span>豆包去水印</span><br className="hero-title-break" />高清原图下载</h1>
           <p className="hero-lead">
-            粘贴豆包公开分享链接，一键获取无水印高清原图。不是涂抹或修复水印，因此不损失图片画质。
+            粘贴豆包公开分享链接，一键获取无水印高清原图。
           </p>
           <div className="hero-facts" aria-label="产品特点">
             <span><LockIcon /> 不上传图片文件</span>
