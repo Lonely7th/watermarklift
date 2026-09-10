@@ -10,7 +10,8 @@ export const siteConfig = {
   apiUrl:
     process.env.NEXT_PUBLIC_API_URL?.trim() ||
     "https://seekservice-9gkeeztlfcb2a6d4-1301441002.ap-shanghai.app.tcloudbase.com/pic-mark",
-  contactEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL?.trim() || "",
+  contactEmail:
+    process.env.NEXT_PUBLIC_CONTACT_EMAIL?.trim() || "queketalk@126.com",
   repository: "https://github.com/Lonely7th/watermarklift",
   upstreamRepository: "https://github.com/ihmily/doubao-nomark",
 } as const;

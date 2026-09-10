@@ -31,11 +31,11 @@ npm run dev
 ```dotenv
 NEXT_PUBLIC_SITE_NAME=WatermarkLift
 NEXT_PUBLIC_SITE_URL=https://watermarklift.cn
-NEXT_PUBLIC_CONTACT_EMAIL=contact@your-domain.example
+NEXT_PUBLIC_CONTACT_EMAIL=queketalk@126.com
 NEXT_PUBLIC_API_URL=https://你的接口地址/pic-mark
 ```
 
-站名和域名已有代码内默认值，环境变量可用于部署环境覆盖。联系邮箱上线前应填写真实可用的权利投诉地址。
+站名、域名和联系邮箱已有代码内默认值，环境变量可用于部署环境覆盖。
 
 ## 检查和构建
 
@@ -60,7 +60,7 @@ npm start
 2. 将自定义域名绑定到静态托管并启用 HTTPS。
 3. 在 `/pic-mark` 云函数的 CORS 白名单中加入正式站点域名。
 4. 为 HTML 配置较短缓存，为 `/_next/static/` 配置长期不可变缓存。
-5. 确认正式 URL 为 `https://watermarklift.cn`，并填写真实可用的权利投诉邮箱。
+5. 确认正式 URL 为 `https://watermarklift.cn`，联系邮箱为 `queketalk@126.com`。
 
 ## 隐私核对
 

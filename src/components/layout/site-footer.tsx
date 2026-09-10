@@ -15,6 +15,9 @@ export function SiteFooter() {
           <a href="/faq/">常见问题</a>
           <a href="/privacy/">隐私说明</a>
           <a href="/disclaimer/">免责声明</a>
+          <a href={`mailto:${siteConfig.contactEmail}`}>
+            联系邮箱：{siteConfig.contactEmail}
+          </a>
           <a href={siteConfig.repository} target="_blank" rel="noreferrer">
             GitHub 开源 <ExternalLinkIcon />
           </a>
