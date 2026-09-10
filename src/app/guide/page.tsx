@@ -29,7 +29,7 @@ const howToStructuredData = {
     {
       "@type": "HowToStep",
       position: 2,
-      name: "选择图片并复制链接",
+      name: "复制分享链接",
       text: "在分享窗口中选中需要处理的图片，然后点击复制链接。",
       image: `${siteConfig.url}/images/doubao-copy-share-link.png`,
     },
