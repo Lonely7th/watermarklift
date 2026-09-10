@@ -841,6 +841,7 @@ button {
 }
 
 .recommendation-mark {
+  position: relative;
   display: inline-grid;
   place-items: center;
   width: 43px;
@@ -851,6 +852,26 @@ button {
   font-size: 18px;
   font-weight: 700;
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+}
+
+.recommendation-logo-fallback {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+}
+
+.recommendation-mark img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 4px;
+  border-radius: inherit;
+  background: white;
+  object-fit: contain;
 }
 
 .recommendation-mark.blue { background: linear-gradient(145deg, #157cf3, #3aa8ff); }
@@ -1069,6 +1090,16 @@ button {
   box-shadow: 0 42px 130px rgba(0, 0, 0, 0.3);
 }
 
+.results-dialog-close {
+  position: absolute;
+  z-index: 4;
+  top: 14px;
+  right: 14px;
+  background: color-mix(in srgb, var(--surface-solid) 88%, transparent);
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(14px);
+}
+
 .results-toast {
   position: absolute;
   z-index: 3;
@@ -1209,13 +1240,12 @@ button {
 }
 
 .results-dialog .recommendation-description {
-  display: -webkit-box;
+  display: block;
   align-self: start;
-  overflow: hidden;
+  overflow: visible;
   font-size: 10px;
-  line-height: 1.35;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 1;
+  line-height: 1.45;
+  white-space: normal;
 }
 
 .preview-dialog {
@@ -1934,7 +1964,7 @@ button {
   }
 
   .results-dialog-images {
-    padding: 23px 18px 28px;
+    padding: 58px 18px 28px;
   }
 
   .results-dialog-tools {

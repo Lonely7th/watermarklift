@@ -34,7 +34,7 @@ test("renders static content and parses a valid share URL", async ({ page }) => 
     .fill("https://www.doubao.com/thread/example");
   await submitButton.click();
   const resultsDialog = page.getByRole("dialog", {
-    name: "无水印成果与工具推荐",
+    name: "豆包去水印成果",
   });
   await expect(resultsDialog).toBeVisible();
   await expect(
@@ -42,6 +42,10 @@ test("renders static content and parses a valid share URL", async ({ page }) => 
   ).toBeVisible();
   await expect(page.getByText("2048 × 2048", { exact: true })).toBeVisible();
   await expect(page.getByRole("heading", { name: "好用的 AI 工具" })).toBeVisible();
+  await expect(resultsDialog.locator(".recommendation-mark img")).toHaveCount(5);
+  await expect(
+    resultsDialog.getByText("文字转语音、虚拟数字人和音视频内容创作平台。"),
+  ).toBeVisible();
   await expect(page.getByRole("link", { name: /讯飞智作/ })).toHaveAttribute(
     "href",
     "https://www.xfzhizuo.cn/",

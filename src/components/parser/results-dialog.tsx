@@ -61,21 +61,16 @@ export function ResultsDialog({ images, onClose }: ResultsDialogProps) {
         aria-modal="true"
         aria-labelledby="results-dialog-title"
       >
-        <header className="results-dialog-toolbar">
-          <div>
-            <span className="success-badge"><CheckIcon /> 处理成功</span>
-            <strong id="results-dialog-title">无水印成果与工具推荐</strong>
-          </div>
-          <button
-            ref={closeButtonRef}
-            type="button"
-            className="icon-button"
-            onClick={onClose}
-          >
-            <span className="sr-only">关闭成果弹窗</span>
-            <CloseIcon />
-          </button>
-        </header>
+        <h2 id="results-dialog-title" className="sr-only">豆包去水印成果</h2>
+        <button
+          ref={closeButtonRef}
+          type="button"
+          className="icon-button results-dialog-close"
+          onClick={onClose}
+        >
+          <span className="sr-only">关闭成果弹窗</span>
+          <CloseIcon />
+        </button>
 
         <div className="results-dialog-content">
           <div className="results-dialog-images">
